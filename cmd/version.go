@@ -1,6 +1,3 @@
-/*
-Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-*/
 package cmd
 
 import (
@@ -16,7 +13,7 @@ var versionCmd = &cobra.Command{
 	Long: `Get the version of the Osuny command line interface (CLI).
 This is neither the current theme version nore the current admin version.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Osuny CLI v0.0.1")
+		fmt.Println("Osuny CLI", rootCmd.Version)
 	},
 }
 

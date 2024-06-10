@@ -7,8 +7,9 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "osuny",
-	Short: "A command line interface to work with Osuny",
+	Use:     "osuny",
+	Version: "0.0.1",
+	Short:   "A command line interface to work with Osuny",
 	Long: `Osuny lets you create static websites with Hugo.
 This command line interface helps you interact simply as a developer.`,
 }
