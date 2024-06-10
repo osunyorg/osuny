@@ -2,8 +2,14 @@
 
 Application en ligne de commande aidant à coder avec Osuny.
 
-## Usage
+## Installation
 
 ```bash
 go install github.com/osunyorg/osuny@latest
+```
+
+## Usage
+
+```bash
+osuny
 ```
