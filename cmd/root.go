@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var version = "0.0.6"
+var version = "v0.0.7"
 var pagefindExclude = `"` +
 	// Categories: No list of categories
 	`.categories__taxonomy, .categories__term, ` +

@@ -13,3 +13,23 @@ go install github.com/osunyorg/osuny@latest
 ```bash
 osuny
 ```
+
+## Contribution
+
+### Versioning
+
+Set version in `cmd/root.go`, like that 
+
+```go
+var version = "v0.0.7"
+```
+
+Then do
+
+```bash
+go mod tidy
+git add .
+git commit -am "v0.0.7"
+git tag v0.0.7
+git push origin v0.0.7
+```
