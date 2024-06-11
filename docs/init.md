@@ -40,3 +40,4 @@ Ajout d'une commande
 cobra-cli add watch --config .cobra.yaml
 ```
 
+https://go.dev/doc/modules/developing
