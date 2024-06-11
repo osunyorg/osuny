@@ -11,7 +11,7 @@ import (
 var serveCmd = &cobra.Command{
 	Use:     "serve",
 	Aliases: []string{"watch", "server", "w"},
-	Short:   "Launch Hugo server locally",
+	Short:   "Start the Hugo server (without pagefind search)",
 	Long: `Osuny's websites are based on Hugo.
 When you code a website, you work with a local version on a local server.
 This command launches the server.

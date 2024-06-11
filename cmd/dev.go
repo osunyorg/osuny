@@ -12,7 +12,7 @@ import (
 var devCmd = &cobra.Command{
 	Use:     "dev",
 	Aliases: []string{"d"},
-	Short:   "Used to code locally with the pagefind search",
+	Short:   "Start the Hugo server (with pagefind search)",
 	Long: `This command builds the website in the public directory, 
 then launches pagefind to index it, 
 stores the pagefind artefacts in the static directory, 
