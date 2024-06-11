@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"fmt"
 	"os"
 	"os/exec"
 
@@ -15,10 +14,11 @@ var buildCmd = &cobra.Command{
 	Long: `The command is based on Hugo build, 
 plus some configuration and the commands related to Pagefind.`,
 	Run: func(cmd *cobra.Command, args []string) {
+		// Errors should crash build, so we don't use function Shell
 		command := exec.Command(`hugo`, `--minify`)
 		command.Stdout = os.Stdout
 		if err := command.Run(); err != nil {
-			fmt.Println("could not run command: ", err)
+			panic(err)
 		}
 		command = exec.Command("npx",
 			"pagefind",
@@ -28,7 +28,7 @@ plus some configuration and the commands related to Pagefind.`,
 		command.Env = append(command.Env, "npm_config_yes=true")
 		command.Stdout = os.Stdout
 		if err := command.Run(); err != nil {
-			fmt.Println("could not run command: ", err)
+			panic(err)
 		}
 	},
 }

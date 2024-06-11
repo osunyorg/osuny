@@ -1,12 +1,14 @@
 package cmd
 
 import (
+	"fmt"
 	"os"
+	"os/exec"
 
 	"github.com/spf13/cobra"
 )
 
-var version = "0.0.5"
+var version = "0.0.6"
 var pagefindExclude = `"` +
 	// Categories: No list of categories
 	`.categories__taxonomy, .categories__term, ` +
@@ -45,6 +47,14 @@ func Execute() {
 	err := rootCmd.Execute()
 	if err != nil {
 		os.Exit(1)
+	}
+}
+
+func Shell(command string, args ...string) {
+	cmd := exec.Command(command, args...)
+	cmd.Stdout = os.Stdout
+	if err := cmd.Run(); err != nil {
+		fmt.Println("could not run command: ", err)
 	}
 }
 
