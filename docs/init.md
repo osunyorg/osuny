@@ -1,6 +1,5 @@
 # Notes sur la mise en place
 
-
 ```bash
 go install github.com/spf13/cobra-cli@latest
 ```
@@ -17,7 +16,7 @@ L'installation de Cobra-CLI se fait avec
 go install github.com/spf13/cobra-cli@latest
 ```
 
-Il a fallu ajouter ça au fichier `.zshrc` pour que ça se charge
+Il a fallu ajouter ça au fichier `.zshrc` pour que le module se charge
 ```
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
@@ -29,6 +28,7 @@ author: noesya <contact@noesya.coop>
 year: 2024
 license: MIT
 ```
+Finalement je ne l'utilise pas (-> supprimé).
 
 Initialisation de l'app
 ```bash
