@@ -6,15 +6,15 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var version = "0.0.3"
+var version = "0.0.4"
 
 var rootCmd = &cobra.Command{
 	Use:     "osuny",
 	Version: version,
 	Short:   "Work seamlessly with Osuny from the command line",
 	Long: `Osuny creates static websites with Hugo.
-This command line interface (CLI) helps the developer, 
-to work with the generated websites.
+This command line interface (CLI) helps the developer
+to work on the generated websites.
 
 More help at https://developers.osuny.org`,
 }
