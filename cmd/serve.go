@@ -35,6 +35,6 @@ var WithSearch bool
 func init() {
 	rootCmd.AddCommand(serveCmd)
 
-	serveCmd.Flags().BoolVarP(&WithSearch, "with-search", "s", false, "with Pagefind search")
+	serveCmd.Flags().BoolVarP(&WithSearch, "with-search", "", false, "with Pagefind search")
 
 }
