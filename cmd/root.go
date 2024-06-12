@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -51,6 +52,9 @@ func Execute() {
 }
 
 func Shell(command string, args ...string) {
+	var list = []string{command}
+	list = append(list, args...)
+	fmt.Println("Running", strings.Join(list, " "))
 	cmd := exec.Command(command, args...)
 	cmd.Stdout = os.Stdout
 	if err := cmd.Run(); err != nil {

@@ -4,7 +4,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// upgradeCmd represents the upgrade command
 var upgradeCmd = &cobra.Command{
 	Use:   "upgrade",
 	Short: "Upgrade the Osuny CLI",
