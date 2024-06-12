@@ -15,7 +15,7 @@ When you code a website, you work with a local version on a local server.
 This command launches the server.
 It's just a proxy for "hugo server".`,
 	Run: func(cmd *cobra.Command, args []string) {
-		if WithSearch {
+		if withSearch {
 			fmt.Println("Preparing Pagefind index with exclusions:", pagefindExclude)
 
 			Shell("hugo")
@@ -26,15 +26,19 @@ It's just a proxy for "hugo server".`,
 				"--exclude-selectors", pagefindExclude,
 				"--output-subdir", "../static/pagefind")
 		}
-		Shell("hugo", "serve")
+
+		Shell("hugo", "server",
+			"--port", fmt.Sprint(serverPort))
 	},
 }
 
-var WithSearch bool
+var withSearch bool
+var serverPort int
 
 func init() {
 	rootCmd.AddCommand(serveCmd)
 
-	serveCmd.Flags().BoolVarP(&WithSearch, "with-search", "", false, "with Pagefind search")
+	serveCmd.Flags().BoolVarP(&withSearch, "with-search", "", false, "with Pagefind search")
+	serveCmd.Flags().IntVarP(&serverPort, "port", "p", 1313, "port on which the server will listen")
 
 }
