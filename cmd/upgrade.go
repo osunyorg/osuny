@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"fmt"
+
 	"github.com/spf13/cobra"
 )
 
@@ -11,8 +13,9 @@ var upgradeCmd = &cobra.Command{
 It's code is hosted at github.com/osunyorg/osuny.
 This command launches 'go install github.com/osunyorg/osuny' to get the latest version.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		// FIXME does not seem to work
+		fmt.Println("There is a delay between the release and the ability to update")
 		Shell("go", "install", "github.com/osunyorg/osuny@latest")
+		versionCmd.Run(cmd, []string{})
 	},
 }
 
