@@ -7,7 +7,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// buildCmd represents the build command
 var buildCmd = &cobra.Command{
 	Use:   "build",
 	Short: "Build the website for production",

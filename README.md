@@ -16,6 +16,12 @@ osuny
 
 ## Contribution
 
+### Local install
+
+```bash 
+go install
+```
+
 ### Versioning
 
 Set version in `cmd/root.go`, like that 
@@ -35,3 +41,4 @@ git push origin v0.0.7
 git push origin main
 ```
 (not sure about the last 2 commands)
+

@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/go-git/go-git/v5"
 	"github.com/spf13/cobra"
 )
 
@@ -17,9 +18,11 @@ The repository name should be like "epv-site", not "osunyorg/epv-site".
 This is intended to maintain the centralized maintenance of the theme.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		var repository = args[0]
-		// TODO ssh or https flag
 		var url = fmt.Sprintf("git@github.com:osunyorg/%s.git", repository)
-		Shell("git", "clone", url, "--recurse-submodules")
+		git.PlainClone(repository, false, &git.CloneOptions{
+			URL:               url,
+			RecurseSubmodules: git.DefaultSubmoduleRecursionDepth,
+		})
 	},
 }
 
